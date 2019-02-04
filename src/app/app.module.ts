@@ -14,6 +14,7 @@ import { VideoComponent } from './video/video.component';
 import { ListComponent } from './list/list.component';
 import { MenuComponent } from './menu/menu.component';
 import { WatchComponent } from './watch/watch.component';
+import { AudioComponent } from './audio/audio.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { WatchComponent } from './watch/watch.component';
     ListComponent,
     MenuComponent,
     WatchComponent,
+    AudioComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),

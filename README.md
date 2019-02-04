@@ -1,6 +1,17 @@
 # MediaPlayer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.3.
+Plays video and audio by loading data from firebase
+
+## Demo
+https://reactflashcards-45cbc.firebaseapp.com/
+
+## Flow Diagram
+https://goo.gl/RsxN4R
+
+
+## About Media Player
+https://goo.gl/6HgdrH
+
 
 ## Development server
 

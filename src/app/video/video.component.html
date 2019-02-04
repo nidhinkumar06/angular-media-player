@@ -15,7 +15,7 @@
   </mat-video> -->
   <video #video id="video" width="850" height="460" autoplay poster={{posterImage}} preload="auto" controls>
     <source src="{{videoPath}}" type="video/mp4">
-    <track  src={{tamilTitle}} kind="captions" srclang="ta" label="Tamil">
+    <track  src={{tamilTitle}} kind="captions" srclang="ta" label="Tamil" default>
   </video>
   <h1 style="font-weight: 400; line-height: 2.4rem;">{{title}}</h1>
   <h5>{{plot}}</h5>

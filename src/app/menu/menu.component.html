@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm" *ngFor="let item of items | async" style="height: 300px;">
+    <div class="col-sm" *ngFor="let item of items | async" style="height: 320px;">
         <div class="card text-center" style="width: 18rem;">
             <img [src]="item.Poster" 
             style="height: 175px;"
@@ -9,6 +9,13 @@
             <div class="card-body">
               <h5 class="card-title">{{item.Title}}</h5>
               <button type="button" class="btn btn-primary" (click)="goToPage('watch', item)">Watch</button>
+              &nbsp;
+              <button *ngIf="!item.playAudio" type="button" class="btn btn-secondary" (click)="audioClicked(item)">Listen</button>
+              <button *ngIf="item.playAudio" type="button" class="btn btn-secondary" (click)="stopAudio(item)">Stop</button>
+              <audio autoplay preload="auto" controls *ngIf="item.playAudio" style="padding-right: 40px;">
+                <source src="{{item.audioUrl}}" type="audio/mpeg">
+                <track  src={{tamilTitle}} kind="captions" srclang="ta" label="Tamil">
+              </audio>
             </div>
         </div>
     </div>
