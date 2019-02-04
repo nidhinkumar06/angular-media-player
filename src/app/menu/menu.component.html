@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm" *ngFor="let item of items | async" style="height: 300px;">
+        <div class="card text-center" style="width: 18rem;">
+            <img [src]="item.Poster" 
+            style="height: 175px;"
+            class="card-img-top" 
+            alt="ImageCap">
+            <div class="card-body">
+              <h5 class="card-title">{{item.Title}}</h5>
+              <button type="button" class="btn btn-primary" (click)="goToPage('watch', item)">Watch</button>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

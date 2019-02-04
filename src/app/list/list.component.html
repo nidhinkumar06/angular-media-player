@@ -1,0 +1,9 @@
+<ul class="list-unstyled">
+  <li class="media" *ngFor="let item of items | async" (click)="goToPage('watch', item)">
+      <img [src]="item.Poster" class="mr-3" alt="poster" style="width: 75px; height: 75px;">
+      <div class="media-body" style="margin-left: 30px;">
+        <h5 class="mt-0 mb-1">{{item.Title}}</h5>
+        {{item.Director}}
+      </div>
+  </li>
+</ul>
