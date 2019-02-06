@@ -14,6 +14,8 @@ export class VideoComponent implements OnInit {
   public englishTitle: string;
   public tamilTitle: string;
   public posterImage: string;
+  public videoURLOne: string;
+  public videoURLTwo: string;
 
   constructor(private route: ActivatedRoute, private elRef: ElementRef) {
     this.route.queryParams.subscribe(params => {
