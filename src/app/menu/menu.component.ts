@@ -32,7 +32,9 @@ export class MenuComponent implements OnInit {
           "plot": params.Plot,
           "poster": params.Poster,
           "subtitles_en": params && params.subtitles && params.subtitles.en || "../assets/subtitles_en.vtt",
-          "subtitles_ta": params && params.subtitles && params.subtitles.ta || "../assets/subtitles_ta.vtt"
+          "subtitles_ta": params && params.subtitles && params.subtitles.ta || "../assets/subtitles_ta.vtt",
+          "quality": JSON.stringify(params.quality) || '',
+          "videoQuality": params.videoQuality || ''
       }
   };
     
@@ -44,19 +46,7 @@ export class MenuComponent implements OnInit {
   }
 
   audioClicked(params: any) {
-    // let navigationExtras: NavigationExtras = {
-    //   queryParams: {
-    //       "audiourl": params.audioUrl,
-    //       "title": params.Title,
-    //       "plot": params.Plot,
-    //       "poster": params.Poster,
-    //       "subtitles_en": params && params.subtitles && params.subtitles.en || "../assets/subtitles_en.vtt",
-    //       "subtitles_ta": params && params.subtitles && params.subtitles.ta || "../assets/subtitles_ta.vtt"
-    //   }
-    // };
     params.playAudio = true;
-    
-    // this.router.navigate([`${pageName}`], navigationExtras);
   }
 
 }

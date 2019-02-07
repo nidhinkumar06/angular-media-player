@@ -31,7 +31,9 @@ export class ListComponent implements OnInit {
           "plot": params.Plot,
           "poster": params.Poster,
           "subtitles_en": params && params.subtitles && params.subtitles.en || "../assets/subtitles_en.vtt",
-          "subtitles_ta": params && params.subtitles && params.subtitles.ta || "../assets/subtitles_ta.vtt"
+          "subtitles_ta": params && params.subtitles && params.subtitles.ta || "../assets/subtitles_ta.vtt",
+          "quality": JSON.stringify(params.quality) || '',
+          "videoQuality": params.videoQuality || ''
       }
     };
     this.router.navigateByUrl('/video', {skipLocationChange: true}).then(()=>

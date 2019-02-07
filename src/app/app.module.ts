@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
+import { FormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatVideoModule } from 'mat-video';
@@ -29,6 +30,7 @@ import { AudioComponent } from './audio/audio.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatVideoModule
