@@ -12,18 +12,9 @@ import { find } from 'lodash';
 })
 export class VideoComponent implements OnInit {
 
-  // departments: VideoName[] = [
-  //   { id: 144, name: '144p' },
-  //   { id: 240, name: '240p' },
-  //   { id: 360, name: '360p' },
-  //   { id: 480, name: '480p' },
-  //   { id: 720, name: '720p-HD' },
-  //   { id: 1080, name: '1080p-HD' }
-  // ];
-
   @ViewChild('videoPlayer') videoplayer: ElementRef;
 
-  departments: VideoName[] = [];
+  videos: VideoName[] = [];
 
   public videoPath: string;
   public title: string;
@@ -35,7 +26,6 @@ export class VideoComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private elRef: ElementRef) {
     this.route.queryParams.subscribe(params => {
-      console.log('params is', params);
       this.videoPath = params["url"];
       this.title = params["title"];
       this.plot = params["plot"];
@@ -44,7 +34,7 @@ export class VideoComponent implements OnInit {
       this.posterImage = params["poster"];
       this.quality = JSON.parse(params["quality"]);
       Object.keys(this.quality).map((key) => {
-        this.departments.push({id: key, name: this.quality[key].name, url: this.quality[key].url});
+        this.videos.push({id: key, name: this.quality[key].name, videoUrl: this.quality[key].url});
       });
     });
 
@@ -52,8 +42,8 @@ export class VideoComponent implements OnInit {
 
   changedata($event){
     let id = $event.target.value;
-    let selectedData = find(this.departments, {id: id});
-    this.videoPath = selectedData.url;
+    let selectedData = find(this.videos, {id: id});
+    this.videoPath = selectedData.videoUrl;
     this.videoplayer.nativeElement.load();
     this.videoplayer.nativeElement.play();
   }

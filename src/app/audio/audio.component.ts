@@ -12,7 +12,6 @@ export class AudioComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private elRef: ElementRef) {
     this.route.queryParams.subscribe(params => {
-      console.log('params are', params);
       this.audioPath = params["audiourl"];
       this.title = params["title"];      
     });

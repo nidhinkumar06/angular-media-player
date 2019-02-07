@@ -23,8 +23,6 @@ export class MenuComponent implements OnInit {
   }
 
   goToPage(pageName:string, params: any) {
-    console.log('pageName is', pageName);
-    console.log('url is', params);
     let navigationExtras: NavigationExtras = {
       queryParams: {
           "url": params.videoUrl,

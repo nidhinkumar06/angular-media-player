@@ -1,4 +1,5 @@
 export class VideoName {
-    id: number;
-    name: string;
+    id?: string | number;
+    name?: string | number;
+    videoUrl?: string | number;
 }

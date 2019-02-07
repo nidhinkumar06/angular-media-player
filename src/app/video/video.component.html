@@ -1,36 +1,21 @@
-<div style="width: 850px; height: 460px;">
-  
-  <!-- <mat-video  
-      [autoplay]="true" 
-      [preload]="true" 
-      [fullscreen]="true" 
-      [download]="false"
-      [quality]="true"
-      [keyboard]="true"
-      color="accent" 
-      spinner="spin"
-      poster={{posterImage}}>
-    <source matVideoSource src={{videoPath}} type="video/mp4">  
-    <track  src={{tamilTitle}} kind="captions" srclang="ta" label="Tamil">
-  </mat-video> -->
-  
+<div style="width: 850px; height: 460px;">  
   <video #videoPlayer width="850" height="460" autoplay poster={{posterImage}} preload="auto" controls>
     <source src="{{videoPath}}" type="video/mp4">
     <track  src={{tamilTitle}} kind="captions" srclang="ta" label="Tamil" default>
   </video>
   
-  <div class="dropdown" *ngIf="departments.length > 0">
+  <div class="dropdown" *ngIf="videos.length > 0">
     <div class="row">
         <div class="col-lg-2">
             <p style="text-align: center;
             padding-top: 10px;">Video Quality</p>
         </div>
         <div class="col-lg-10">
-            <select id="department"   (change) = "changedata($event)" [(ngModel)]="department"
+            <select id="videolist"   (change) = "changedata($event)" [(ngModel)]="videolist"
             class="form-control">
               <option [ngValue]="undefined" disabled>Select Video Quality</option>
-              <option *ngFor="let dept of departments" [value]="dept.id">
-                {{dept.name}}
+              <option *ngFor="let video of videos" [value]="video.id">
+                {{video.name}}
               </option>
             </select>
         </div>
